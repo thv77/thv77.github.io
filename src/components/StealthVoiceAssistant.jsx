@@ -277,7 +277,7 @@ export default function StealthVoiceAssistant({
                 VOICE AI
               </span>
             </div>
-            <div className="text-[10px] text-zinc-400 font-mono-space">
+            <div className="hidden sm:block text-[10px] text-zinc-400 font-mono-space">
               Hands-Free Hab Operator
             </div>
           </div>

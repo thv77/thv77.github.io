@@ -163,7 +163,7 @@ export default function Navbar({
             {/* 60-SECOND JUDGE TOUR BUTTON */}
             <button
               onClick={onOpenJudgeTour}
-              className="flex items-center gap-1 px-2 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-100 dark:text-white border border-zinc-300 dark:border-zinc-700 font-hud text-xs font-bold transition-all shadow-sm shrink-0 cursor-pointer"
+              className="hidden md:flex items-center gap-1 px-2 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-100 dark:text-white border border-zinc-300 dark:border-zinc-700 font-hud text-xs font-bold transition-all shadow-sm shrink-0 cursor-pointer"
               title="Launch 60-Second Guided Tour for NASA Judges"
             >
               <Rocket className="w-3.5 h-3.5 text-zinc-300 dark:text-zinc-200" />
@@ -195,11 +195,11 @@ export default function Navbar({
             {/* Flight Dossier Report Button */}
             <button
               onClick={onOpenDossier}
-              className="flex items-center gap-1 px-2 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white border border-zinc-300 dark:border-zinc-700 font-hud text-xs font-semibold transition-all shadow-sm shrink-0 cursor-pointer"
+              className="hidden 2xl:flex items-center gap-1 px-2 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white border border-zinc-300 dark:border-zinc-700 font-hud text-xs font-semibold transition-all shadow-sm shrink-0 cursor-pointer"
               title="Open NASA Medical Dossier (Form 1047)"
             >
               <FileText className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-300" />
-              <span className="hidden 2xl:inline">Dossier</span>
+              <span>Dossier</span>
             </button>
 
             {/* CODE RED EMERGENCY BUTTON */}
@@ -213,7 +213,7 @@ export default function Navbar({
             </button>
 
             {/* Environment Selector: Compact Aerospace Segmented Toggle */}
-            <div className="flex items-center rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 p-0.5 text-xs shrink-0">
+            <div className="hidden sm:flex items-center rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 p-0.5 text-xs shrink-0">
               <button
                 onClick={() => setCurrentEnv('transit')}
                 className={`flex items-center gap-1 px-1.5 py-1 rounded transition-all cursor-pointer ${
@@ -257,7 +257,7 @@ export default function Navbar({
             {/* Quick Mission Ops Icon Button */}
             <button
               onClick={() => setActiveTab('mission_ops')}
-              className={`flex items-center gap-1 px-2 py-1.5 rounded-lg text-xs font-hud font-bold transition-all shadow-sm shrink-0 cursor-pointer border ${
+              className={`hidden 2xl:flex items-center gap-1 px-2 py-1.5 rounded-lg text-xs font-hud font-bold transition-all shadow-sm shrink-0 cursor-pointer border ${
                 activeTab === 'mission_ops'
                   ? 'bg-zinc-900 dark:bg-white text-white dark:text-black border-zinc-900 dark:border-white'
                   : 'bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-900 dark:text-white border-zinc-300 dark:border-zinc-700'
@@ -265,10 +265,10 @@ export default function Navbar({
               title="Open Mission & Squad Operations"
             >
               <Users className="w-3.5 h-3.5 text-emerald-500" />
-              <span className="hidden 2xl:inline">Mission Ops</span>
+              <span>Mission Ops</span>
             </button>
 
-            {/* Crew Member Dropdown - Guaranteed within bounds */}
+            {/* Crew Member Dropdown - Guaranteed within bounds on all mobile screens */}
             <div className="relative shrink-0">
               <select
                 value={activeCrew.id}
@@ -276,7 +276,7 @@ export default function Navbar({
                   const member = crewList.find(c => c.id === e.target.value);
                   if (member) setActiveCrew(member);
                 }}
-                className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg px-2 py-1.5 text-xs text-zinc-900 dark:text-zinc-200 focus:outline-none focus:border-zinc-500 font-mono-space cursor-pointer shadow-sm w-[115px] sm:w-[130px] md:w-[145px] truncate"
+                className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg px-2 py-1.5 text-[11px] sm:text-xs text-zinc-900 dark:text-zinc-200 focus:outline-none focus:border-zinc-500 font-mono-space cursor-pointer shadow-sm w-[90px] sm:w-[130px] md:w-[145px] truncate"
                 title="Select Active Patient Biometric Feed"
               >
                 {crewList.map(c => {
@@ -354,6 +354,31 @@ export default function Navbar({
               <span className="font-bold text-zinc-900 dark:text-white">{activeCrew.name.split(',')[0]}</span>
               <span className="text-zinc-400">•</span>
               <span className="text-emerald-600 dark:text-emerald-400 font-bold">{activeCrew.overallHealthIndex}% HEALTH</span>
+            </div>
+
+            {/* Mobile Gravity Toggle (Visible inside drawer on mobile) */}
+            <div className="px-4 py-2 bg-zinc-100 dark:bg-zinc-900/40 border-b border-zinc-200 dark:border-zinc-800 sm:hidden flex items-center justify-between text-xs">
+              <span className="text-[10px] font-mono-space text-zinc-500 uppercase font-bold">Gravity:</span>
+              <div className="flex items-center rounded-lg bg-zinc-200 dark:bg-zinc-800 p-0.5 text-xs">
+                <button
+                  onClick={() => setCurrentEnv('transit')}
+                  className={`px-2 py-0.5 rounded text-[10px] font-mono-space ${currentEnv === 'transit' ? 'bg-zinc-900 text-white dark:bg-white dark:text-black font-bold' : 'text-zinc-600 dark:text-zinc-300'}`}
+                >
+                  0g
+                </button>
+                <button
+                  onClick={() => setCurrentEnv('lunar')}
+                  className={`px-2 py-0.5 rounded text-[10px] font-mono-space ${currentEnv === 'lunar' ? 'bg-zinc-900 text-white dark:bg-white dark:text-black font-bold' : 'text-zinc-600 dark:text-zinc-300'}`}
+                >
+                  1/6g
+                </button>
+                <button
+                  onClick={() => setCurrentEnv('mars')}
+                  className={`px-2 py-0.5 rounded text-[10px] font-mono-space ${currentEnv === 'mars' ? 'bg-zinc-900 text-white dark:bg-white dark:text-black font-bold' : 'text-zinc-600 dark:text-zinc-300'}`}
+                >
+                  3/8g
+                </button>
+              </div>
             </div>
 
             {/* Vertical Module List (Up to Down) */}

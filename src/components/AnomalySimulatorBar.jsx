@@ -90,11 +90,12 @@ export default function AnomalySimulatorBar({ onInjectAnomaly, onResetNominal })
       <div className="flex items-center gap-2">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/95 dark:bg-zinc-900/95 hover:bg-white dark:hover:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-white font-hud text-xs font-semibold shadow-2xl backdrop-blur-md transition-all cursor-pointer ring-1 ring-black/5 dark:ring-white/10"
+          className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-white/95 dark:bg-zinc-900/95 hover:bg-white dark:hover:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-white font-hud text-[11px] sm:text-xs font-semibold shadow-2xl backdrop-blur-md transition-all cursor-pointer ring-1 ring-black/5 dark:ring-white/10"
         >
-          <Sliders className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
-          <span className="font-bold tracking-wider">JUDGE'S TEST BENCH:</span>
-          <span className="text-amber-600 dark:text-amber-400 font-mono-space font-bold">{activeScenarioName}</span>
+          <Sliders className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-700 dark:text-zinc-300" />
+          <span className="hidden sm:inline font-bold tracking-wider">JUDGE'S TEST BENCH:</span>
+          <span className="sm:hidden font-bold tracking-wider">TEST:</span>
+          <span className="text-amber-600 dark:text-amber-400 font-mono-space font-bold max-w-[100px] sm:max-w-none truncate">{activeScenarioName}</span>
           {isOpen ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronUp className="w-3.5 h-3.5" />}
         </button>
       </div>
