@@ -3,8 +3,10 @@
 [![NASA Space Apps Challenge 2026](https://img.shields.io/badge/NASA%20Space%20Apps-2026-blue.svg)](https://www.spaceappschallenge.org/)
 [![Track](https://img.shields.io/badge/Track-Human%20Exploration%20%26%20Software-00e5ff.svg)]()
 [![NASA HRP](https://img.shields.io/badge/Framework-NASA%20Human%20Research%20Program-red.svg)]()
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-00e5ff?style=for-the-badge&logo=nasa)](https://thv77.github.io/PROJECT-XI/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+> 🚀 **Live Interactive Web App**: [https://thv77.github.io/PROJECT-XI/](https://thv77.github.io/PROJECT-XI/)  
 > **Submission for the 2026 NASA Space Apps Challenge**  
 > **Challenge Prompt:** *Create Health Monitoring Software for Astronauts on Space Missions*  
 > **Project:** MARK XI (PROJECT-XI)  
