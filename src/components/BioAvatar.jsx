@@ -194,9 +194,10 @@ export default function BioAvatar({ organSystems, selectedOrgan, onSelectOrgan, 
     const camera = new THREE.PerspectiveCamera(40, W / H, 0.1, 100);
     camera.position.set(0, 0.0, 3.25);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    const isMobile = typeof window !== 'undefined' && (window.innerWidth < 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0);
+    const renderer = new THREE.WebGLRenderer({ antialias: !isMobile, alpha: false, powerPreference: 'high-performance' });
     renderer.setSize(W, H);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(isMobile ? 1.0 : Math.min(window.devicePixelRatio, 1.75));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = isLight ? 1.05 : 1.25;
     rendererRef.current = renderer;
@@ -884,22 +885,29 @@ export default function BioAvatar({ organSystems, selectedOrgan, onSelectOrgan, 
       e.preventDefault(); // Enable right-click panning without opening browser context menu
     };
 
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isHorizontalGesture = false;
+
     const onTouchStart = (e) => {
-      isDragging = true;
       autoRotate = false;
       setAutoRotateActive(false);
       if (e.touches.length === 2) {
+        isDragging = true;
         const dx = e.touches[0].clientX - e.touches[1].clientX;
         const dy = e.touches[0].clientY - e.touches[1].clientY;
         initialPinch = Math.hypot(dx, dy);
-      } else {
-        prevX = e.touches[0].clientX;
-        prevY = e.touches[0].clientY;
+      } else if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        prevX = touchStartX;
+        prevY = touchStartY;
+        isHorizontalGesture = false;
+        isDragging = false;
       }
     };
 
     const onTouchMove = (e) => {
-      if (!isDragging) return;
       if (e.touches.length === 2 && initialPinch) {
         const dx = e.touches[0].clientX - e.touches[1].clientX;
         const dy = e.touches[0].clientY - e.touches[1].clientY;
@@ -908,18 +916,37 @@ export default function BioAvatar({ organSystems, selectedOrgan, onSelectOrgan, 
         targetZoom = Math.max(0.6, Math.min(5.5, targetZoom + pinchDelta));
         initialPinch = dist;
       } else if (e.touches.length === 1) {
-        const dx = e.touches[0].clientX - prevX;
-        const dy = e.touches[0].clientY - prevY;
-        rotY += dx * 0.012;
-        rotX += dy * 0.008;
-        rotX = Math.max(-0.7, Math.min(0.7, rotX));
-        prevX = e.touches[0].clientX;
-        prevY = e.touches[0].clientY;
+        const curX = e.touches[0].clientX;
+        const curY = e.touches[0].clientY;
+        const deltaX = Math.abs(curX - touchStartX);
+        const deltaY = Math.abs(curY - touchStartY);
+
+        // Decide if this is a horizontal 3D model rotation or vertical page scroll
+        if (!isDragging && !isHorizontalGesture) {
+          if (deltaX > deltaY && deltaX > 8) {
+            isHorizontalGesture = true;
+            isDragging = true;
+          } else if (deltaY > 8) {
+            // User is scrolling the page vertically! Do not hijack touch
+            return;
+          }
+        }
+
+        if (isDragging) {
+          const dx = curX - prevX;
+          const dy = curY - prevY;
+          rotY += dx * 0.012;
+          rotX += dy * 0.008;
+          rotX = Math.max(-0.7, Math.min(0.7, rotX));
+          prevX = curX;
+          prevY = curY;
+        }
       }
     };
 
     const onTouchEnd = () => {
       isDragging = false;
+      isHorizontalGesture = false;
       initialPinch = null;
     };
 
@@ -928,14 +955,35 @@ export default function BioAvatar({ organSystems, selectedOrgan, onSelectOrgan, 
     mount.addEventListener('contextmenu', onContextMenu);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
-    mount.addEventListener('touchstart', onTouchStart, { passive: false });
-    mount.addEventListener('touchmove', onTouchMove, { passive: false });
-    mount.addEventListener('touchend', onTouchEnd);
+    mount.addEventListener('touchstart', onTouchStart, { passive: true });
+    mount.addEventListener('touchmove', onTouchMove, { passive: true });
+    mount.addEventListener('touchend', onTouchEnd, { passive: true });
+
+    // IntersectionObserver to pause Three.js render loop when off-screen
+    let isVisible = true;
+    let observer;
+    if (typeof IntersectionObserver !== 'undefined') {
+      observer = new IntersectionObserver(([entry]) => {
+        isVisible = entry.isIntersecting;
+      }, { threshold: 0.05 });
+      observer.observe(mount);
+    }
 
     // Animation Loop
     let t = 0;
-    const animate = () => {
+    let lastRenderTime = 0;
+    const animate = (timestamp) => {
       animFrameRef.current = requestAnimationFrame(animate);
+
+      // Skip render if off-screen (massive battery & scroll performance gain on mobile)
+      if (!isVisible) return;
+
+      // Throttle render on mobile to smooth 30-45 FPS if device is constrained
+      if (isMobile && timestamp - lastRenderTime < 24) {
+        return;
+      }
+      lastRenderTime = timestamp;
+
       t += 0.016;
 
       if (autoRotate) rotY += 0.003;
@@ -959,7 +1007,7 @@ export default function BioAvatar({ organSystems, selectedOrgan, onSelectOrgan, 
 
       renderer.render(scene, camera);
     };
-    animate();
+    animate(performance.now());
 
     const onResize = () => {
       if (!mount) return;

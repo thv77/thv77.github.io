@@ -79,7 +79,15 @@ export default function TelemetryCards({ activeCrew, currentEnv, onSelectOrgan, 
       ctx.stroke();
 
       step = (step + 1.8);
-      animationFrameId = requestAnimationFrame(renderECG);
+      
+      // Throttle render on high-refresh mobile displays to 30-40 FPS to keep CPU cool & smooth
+      if (typeof window !== 'undefined' && window.innerWidth < 768) {
+        setTimeout(() => {
+          animationFrameId = requestAnimationFrame(renderECG);
+        }, 25);
+      } else {
+        animationFrameId = requestAnimationFrame(renderECG);
+      }
     };
 
     renderECG();
