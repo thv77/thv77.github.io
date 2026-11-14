@@ -181,7 +181,7 @@ export default function HelpPracaModal({
                 <Radio className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
                 <div className="text-xs text-zinc-800 dark:text-zinc-200 font-sans leading-relaxed">
                   <strong className="text-zinc-900 dark:text-white block font-hud text-sm mb-0.5">
-                    AEGIS-BIO • NASA Space Apps Challenge 2026
+                    MARK XI • NASA Space Apps Challenge 2026
                   </strong>
                   Autonomous astronaut clinical decision support solving the <strong>14–22 min communication latency</strong> between Earth and deep-space crews (Artemis Lunar Basecamp & Crewed Mars missions).
                 </div>
@@ -251,7 +251,7 @@ export default function HelpPracaModal({
                   Offline Deep Space Resilience
                 </span>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 font-mono-space leading-relaxed">
-                  AEGIS-BIO operates 100% client-side without relying on cloud APIs, adhering to NASA-STD-3001 spaceflight autonomy mandates.
+                  MARK XI operates 100% client-side without relying on cloud APIs, adhering to NASA-STD-3001 spaceflight autonomy mandates.
                 </p>
               </div>
 
@@ -415,7 +415,7 @@ export default function HelpPracaModal({
         {/* Modal Footer */}
         <div className="p-3 sm:px-6 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/60 flex items-center justify-between text-[11px] font-mono-space text-zinc-500">
           <span>NASA HUMAN RESEARCH PROGRAM (HRP)</span>
-          <span className="font-bold text-zinc-900 dark:text-white">AEGIS-BIO v1.0.0</span>
+          <span className="font-bold text-zinc-900 dark:text-white">MARK XI v1.0.0</span>
         </div>
 
       </div>

@@ -1,4 +1,4 @@
-# AEGIS-BIO: Autonomous Astronaut Health Monitoring & Clinical Decision Support System
+# MARK XI: Autonomous Astronaut Health Monitoring & Clinical Decision Support System
 
 [![NASA Space Apps Challenge 2026](https://img.shields.io/badge/NASA%20Space%20Apps-2026-blue.svg)](https://www.spaceappschallenge.org/)
 [![Track](https://img.shields.io/badge/Track-Human%20Exploration%20%26%20Software-00e5ff.svg)]()
@@ -7,6 +7,7 @@
 
 > **Submission for the 2026 NASA Space Apps Challenge**  
 > **Challenge Prompt:** *Create Health Monitoring Software for Astronauts on Space Missions*  
+> **Project:** MARK XI (PROJECT-XI)  
 > **Target Missions:** Artemis Lunar Basecamp • Deep Space Gateway • Crewed Mars Exploration
 
 ---
@@ -15,15 +16,15 @@
 
 During long-duration exploration missions to Mars and the Moon, astronauts face extreme isolation, space radiation, altered gravity, and closed life-support environments. With a **one-way communication latency of 14 to 22 minutes between Mars and Earth (up to 44 minutes round-trip)**, real-time consultation with Johnson Space Center Ground Flight Surgeons is physically impossible during medical emergencies and critical anomalies.
 
-**AEGIS-BIO** is a mission-grade, autonomous Clinical Decision Support System (CDSS) and visual health monitoring platform designed specifically for astronaut self-assessment. Built strictly upon the **NASA Human Research Program (HRP)** guidelines and the **R.I.D.G.E. Hazard Framework**, AEGIS-BIO equips astronauts to detect early physiological degradation, conduct guided self-examinations, and immediately deploy evidence-based countermeasures without waiting for ground control.
+**MARK XI** is a mission-grade, autonomous Clinical Decision Support System (CDSS) and visual health monitoring platform designed specifically for astronaut self-assessment. Built strictly upon the **NASA Human Research Program (HRP)** guidelines and the **R.I.D.G.E. Hazard Framework**, MARK XI equips astronauts to detect early physiological degradation, conduct guided self-examinations, and immediately deploy evidence-based countermeasures without waiting for ground control.
 
 ---
 
 ## 🧬 The NASA R.I.D.G.E. Hazard Architecture
 
-AEGIS-BIO categorizes and monitors every biometric indicator according to the 5 Hazards of Human Spaceflight:
+MARK XI categorizes and monitors every biometric indicator according to the 5 Hazards of Human Spaceflight:
 
-| Hazard | Physiological Risks Monitored | AEGIS-BIO Autonomous Countermeasure |
+| Hazard | Physiological Risks Monitored | MARK XI Autonomous Countermeasure |
 | :--- | :--- | :--- |
 | **R - Radiation** | Galactic Cosmic Rays (GCR), Solar Particle Events (SPE), DNA double-strand breaks | Biodosimetry threshold monitoring (<600 mSv career limit), SPE solar storm refuge alerts, Space Pharmacy radiolysis tracking |
 | **I - Isolation & Confinement** | Circadian desynchrony, sleep debt, cognitive micro-lapses, interpersonal friction | 3-minute Psychomotor Vigilance Task (PVT-B), 460nm blue-light therapy, Earth Biophilia soundscapes (432 Hz) |
@@ -109,8 +110,8 @@ AEGIS-BIO categorizes and monitors every biometric indicator according to the 5 
 ### Quickstart
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/aegis-bio-nasa.git
-cd aegis-bio-nasa
+git clone https://github.com/thv77/PROJECT-XI.git
+cd PROJECT-XI
 
 # Install dependencies
 npm install

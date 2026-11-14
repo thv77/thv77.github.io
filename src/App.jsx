@@ -504,7 +504,7 @@ export default function App() {
         <div className="w-full max-w-[1720px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2 text-center sm:text-left">
             <span>
-              NASA Space Apps Challenge 2026 • Autonomous Astronaut Health Monitoring (AEGIS-BIO)
+              NASA Space Apps Challenge 2026 • Autonomous Astronaut Health Monitoring (MARK XI)
             </span>
           </div>
 
