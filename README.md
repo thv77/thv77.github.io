@@ -3,10 +3,11 @@
 [![NASA Space Apps Challenge 2026](https://img.shields.io/badge/NASA%20Space%20Apps-2026-blue.svg)](https://www.spaceappschallenge.org/)
 [![Track](https://img.shields.io/badge/Track-Human%20Exploration%20%26%20Software-00e5ff.svg)]()
 [![NASA HRP](https://img.shields.io/badge/Framework-NASA%20Human%20Research%20Program-red.svg)]()
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-00e5ff?style=for-the-badge&logo=nasa)](https://thv77.github.io/PROJECT-XI/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-thv77.github.io-00e5ff?style=for-the-badge&logo=nasa)](https://thv77.github.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> 🚀 **Live Interactive Web App**: [https://thv77.github.io/PROJECT-XI/](https://thv77.github.io/PROJECT-XI/)  
+> 🚀 **Live Interactive Web Application**: **[https://thv77.github.io/](https://thv77.github.io/)**  
+> 📊 **Official 7-Slide Judge Pitch Deck**: **[View on Google Slides](https://docs.google.com/presentation/d/1toNdyKlYsj-05zLO86_CDtBUsKnNSC-J/edit?usp=sharing)** *(or download [MARK_XI_NASA_Space_Apps.pptx](./MARK_XI_NASA_Space_Apps.pptx))*  
 > **Submission for the 2026 NASA Space Apps Challenge**  
 > **Challenge Prompt:** *Create Health Monitoring Software for Astronauts on Space Missions*  
 > **Project:** MARK XI (PROJECT-XI)  
@@ -36,60 +37,76 @@ MARK XI categorizes and monitors every biometric indicator according to the 5 Ha
 
 ---
 
-## ✨ 12 Complete System Capabilities
+## ✨ Complete System Capabilities
 
-### 1. 📷 Optical Biometrics & Facial Fatigue Scanner (Webcam rPPG)
+### 1. 🩻 Digital Twin Bio-Avatar with Anatomical Layer Filters
+- **Three.js Interactive 3D Astronaut**: Real-time rendering with orbit, zoom, and target organ focus.
+- **Anatomical Layer Toggles**: Filter between **All Systems**, **🧠 Neuro-Ocular (SANS & Brain)**, **❤️ Circulatory & Fluids (Heart & Vessels)**, and **🦴 Musculoskeletal (Bones & Muscles)**.
+- **Continuous Optical Laser Scanline**: Futuristic HUD scanline visualizes biometric sweeps across 6 organ systems.
+
+### 2. 🤖 J.A.R.V.I.S. – Autonomous Flight Surgeon Copilot
+- **Offline Clinical Diagnosis**: Matches astronaut symptoms against NASA HRP differential diagnostic trees.
+- **Audio Diagnostic Readback**: Speaks aloud diagnoses and clinical steps like an authentic spacecraft avionics assistant via Web Speech Synthesis.
+- **Evidence-Based Prescriptions**: Prescribes Chibis LBNP suit parameters, ARED loading, and hypercapnia countermeasures.
+
+### 3. 🗣️ S.T.E.A.L.T.H. – Hands-Free Hab Voice Operator
+- **Bulky Suit & Glove Accessibility**: Suited astronauts in pressurized spacesuits can operate telemetry, navigate modules, and trigger emergencies hands-free.
+- **Real-Time Vitals Query**: Speak commands like *"Read my vitals"* to hear heart rate, BP, and readiness status.
+- **Visual Equalizer HUD**: Interactive floating orb with reactive audio waveforms.
+
+### 4. 🚨 CODE RED: Spaceflight Emergency Action System
+- **Interactive 110-BPM Zero-G CPR Metronome**: Audible rhythmic clicker with visual compression guide (`PUSH 5cm - RELEASE`) calibrated to NASA Flight Rule B13-102 (Crew Medical Restraint System).
+- **Synthesized Space Klaxon Siren**: Web Audio API emergency alert siren.
+- **4 High-Stakes Spaceflight Scenarios**: Cardiac Arrest / VFib, Rapid Cabin Decompression, Toxic Ammonia Leak, and Solar Particle Storms.
+
+### 5. 📷 Optical Biometrics & Facial Fatigue Scanner (Webcam rPPG)
 - **Touchless Cardiovascular Extraction**: Uses remote Photoplethysmography (rPPG) via the browser webcam to analyze hemoglobin micro-absorption fluctuations in forehead skin capillaries.
-- **PERCLOS Drowsiness Monitor**: Real-time eye blink duration and percentage of eye closure tracking to catch microsleep and cognitive fatigue.
+- **PERCLOS Drowsiness Monitor**: Real-time eye blink duration and percentage of eye closure tracking to catch microsleep and cognitive fatigue before EVAs.
 
-### 2. 💊 Space Pharmacy & Radiation Drug Degradation Tracker
-- **Cosmic Ray Radiolysis Tracking**: Monitors active pharmaceutical ingredient (API) half-life degradation under cumulative deep space radiation.
+### 6. 💊 Space Pharmacy & Radiation Drug Degradation Tracker
+- **Cosmic Ray Radiolysis Tracking**: Monitors active pharmaceutical ingredient (API) half-life degradation under cumulative radiation.
 - **Dose Compensation Engine**: Automatically recalculates pharmacodynamic dosage offsets (e.g. +15% for Amoxicillin, +20% for Zolpidem).
 - **On-Demand 3D Medicine Synthesizer**: Simulates molecular printing of replacement drug batches.
 
-### 3. 🌲 Earth Biophilia & Neuro-Psychological Resilience
+### 7. 👁️ Astronaut Autonomous Self-Examination Suite
+- **Digital SANS Near-Vision Chart**: Snellen visual acuity self-testing to detect spaceflight-induced hyperopic shift.
+- **Amsler Grid Distortion Matrix**: Interactive clicker grid to pinpoint macular wavy lines and choroidal folds.
+- **Guided Ultrasound Tele-Simulation**: Simulates tele-ultrasound probe placement on the closed superior eyelid to measure Optic Nerve Sheath Diameter (ONSD).
+- **NASA 3-Minute PVT (Psychomotor Vigilance Task)**: Millisecond-precision reaction timer to assess cognitive fatigue.
+
+### 8. 🔬 ASTRO-LAB™ Robotic Bio-Analyzer & IoT Microfluidic Dock
+- **Zero-G Lab-on-a-Chip**: Simulates microgravity acoustic separation and capillary action (solving floating zero-g liquids).
+- **Interactive Consumable Cartridges**: Metabolic Micro-Strip, Renal & Bone Demineralization Chip, Radiation Biodosimetry Strip, and Neuro-Endocrine Salivary Swab.
+
+### 9. 🌲 Earth Biophilia & Neuro-Psychological Resilience
 - **Acoustic Biophilia Immersion**: Web Audio API synthesized spatial nature soundscapes (*Olympic Rainforest Rain*, *Pacific Coastal Surf*, *Alpine Pine Forest Wind*) to alleviate isolation monotony.
 - **Astronaut Journal Sentiment Engine**: Natural language sentiment analysis calculating emotional valence and flagging interpersonal friction risks.
 
-### 4. 📄 NASA Form 1047 Medical Flight Dossier Export
-- **One-Click Official Certification**: Formats all vitals, SANS grades, ASTRO-LAB microfluidics, and J.A.R.V.I.S. sign-offs into a printable / downloadable flight clearance document.
-- **Deep Space Network (DSN) Telemetry JSON Dump**: Instant export of raw encrypted mission telemetry for ground control archives.
-
-### 5. 🧪 Judge's Test Bench: Anomaly Injection Simulator
-- **Live Stress-Testing Pill**: Floating controls allowing hackathon judges to inject acute hypoxia, solar particle storms, severe SANS edema, or hypercapnia spikes live during demonstrations.
-
-### 6. 🤖 J.A.R.V.I.S. – Autonomous Flight Surgeon Copilot
-- **Hands-Free Voice Recognition**: Web Speech Recognition API allowing astronauts wearing bulky spacesuit gloves to speak their symptoms.
-- **Speech Synthesis Audio Readback**: Reads aloud diagnoses and clinical steps like an authentic spacecraft avionics assistant.
-- **Differential Diagnostic Engine**: Generates condition confidence percentages, mapped spaceflight hazards, and immediate 3-step actionable countermeasure protocols.
-
-### 7. 🚨 CODE RED: Spaceflight Emergency Action System
-- **Interactive 110-BPM Zero-G CPR Metronome**: Audible rhythmic clicker with animated visual compression guide (`PUSH (5 cm) - RELEASE`) calibrated to the NASA Crew Medical Restraint System (CMRS) standard.
-- **Synthesized Space Klaxon Siren**: Web Audio API synthesized emergency alert siren.
-- **4 High-Stakes Spaceflight Scenarios**: Cardiac Arrest / Ventricular Fibrillation, Rapid Cabin Decompression & Acute Hypoxia, Toxic Ammonia Leak, and Catastrophic SPE Solar Flare.
-
-### 8. 🩻 Digital Twin Bio-Avatar with Anatomical Layer Filters
-- **Anatomical Layer Toggles**: Filter between **All Systems**, **🧠 Neuro-Ocular (SANS & Brain)**, **❤️ Circulatory & Fluids (Heart & Vessels)**, and **🦴 Musculoskeletal (Bones & Muscles)**.
-- **Continuous Optical Laser Scanline**: A futuristic HUD scanline animates across the body, indicating live status across all 6 organ systems.
-
-### 9. 🔬 ASTRO-LAB™ Robotic Bio-Analyzer & IoT Microfluidic Dock
-- **Zero-G Lab-on-a-Chip**: Simulates microgravity acoustic separation and capillary action (solving the problem of floating zero-g liquids).
-- **Interactive Consumable Cartridges**: Metabolic & Glycemic Micro-Strip, Renal & Bone Demineralization Chip, Radiation Biodosimetry Strip, and Neuro-Endocrine Salivary Swab.
-
 ### 10. 🥗 Space Galley Nutrition & Hydration Countermeasures
 - **Daily Food & Fluid Intake Logging**: Tracks meals against NASA Flight Surgeon medical targets.
-- **Macronutrient Tracking**: Calories (3,100 kcal target), Protein (140g target to mitigate muscle atrophy), Dietary Fiber (35g target for gut microbiome resilience), and Sodium Cap (<2,300 mg to prevent bone calcium excretion).
+- **Macronutrient Tracking**: Calories (3,100 kcal target), Protein (140g target), Dietary Fiber (35g target), and Sodium Cap (<2,300 mg).
 - **Hydration & Nephrolithiasis Shield**: Real-time kidney stone risk calculator with one-click fluid logging (+250 mL / +500 mL) to flush leached bone calcium.
 
 ### 11. 👥 Multi-Crew EVA Flight-Readiness Matrix & SPE Drill
 - **Whole-Crew Telemetry Grid**: Side-by-side comparison of Commander, Pilot, and Medical Officer across Cardiovascular, SANS, Bone Density, PVT reaction speed, and cumulative radiation.
-- **Pre-EVA Spacewalk Clearance Status**: Automated assessment determining if an astronaut is *Cleared*, *Cleared with Restriction (e.g. Cheater Lens)*, or *Restricted*.
+- **Pre-EVA Spacewalk Clearance Status**: Automated assessment determining if an astronaut is *Cleared*, *Cleared with Restriction*, or *Restricted*.
 
-### 12. 👁️ Astronaut Autonomous Self-Examination Suite
-- **Digital SANS Near-Vision Chart**: Snellen visual acuity self-testing to detect spaceflight-induced hyperopic shift.
-- **Amsler Grid Distortion Matrix**: Interactive clicker grid to pinpoint macular wavy lines and choroidal folds.
-- **Guided Ultrasound Tele-Simulation**: Simulates tele-ultrasound probe placement on the closed superior eyelid to measure Optic Nerve Sheath Diameter (ONSD).
-- **NASA 3-Minute PVT (Psychomotor Vigilance Task)**: Millisecond-precision reaction timer to assess cognitive fatigue and operational readiness before EVA maneuvers.
+### 12. 📄 NASA Form 1047-B Medical Dossier & PRACA Anomaly Dispatch
+- **One-Click Official Certification**: Formats vitals, SANS grades, ASTRO-LAB microfluidics, and J.A.R.V.I.S. sign-offs into a printable / downloadable flight clearance document.
+- **NASA PRACA Form 1048-A Dispatch**: Direct reporting system capturing subsystem telemetry for Deep Space Network (DSN) uplink.
+
+### 13. 🧪 Judge's Test Bench: Anomaly Injection Simulator
+- **Live Stress-Testing Pill**: Floating controls allowing hackathon judges to inject acute hypoxia, solar particle storms, severe SANS edema, or hypercapnia spikes live during demonstrations.
+
+---
+
+## 📱 Mobile-First Aerospace Performance
+
+MARK XI is engineered to run fluidly on both desktop mission stations and mobile astronaut tablets/phones:
+* **Gesture-Aware Touch Scrolling**: Smart vertical touch passthrough allows effortless 60–120Hz page scrolling without hijacking touch over the 3D avatar.
+* **GPU Fragment Scaling**: Automatic pixel-ratio normalization (`1.0` on mobile) prevents GPU thermal throttling on high-DPI Retina screens.
+* **Off-Screen Three.js Auto-Pause**: An `IntersectionObserver` suspends the WebGL loop whenever the 3D model is scrolled out of view, saving 100% of GPU compute for clinical modules.
+* **Canvas Waveform Throttling**: ECG trace renders at an optimized 35 FPS on mobile, reducing CPU draw by over 45%.
 
 ---
 
@@ -97,13 +114,13 @@ MARK XI categorizes and monitors every biometric indicator according to the 5 Ha
 
 - **Framework**: React 18 + Vite 6
 - **Styling**: Tailwind CSS + Custom NASA Glassmorphism HUD Theme (Seamless Light / Dark Aerospace Mode)
+- **3D Graphics**: Three.js (Hardware-accelerated 3D astronaut digital twin)
 - **Data Visualization**: Recharts (Longitudinal BMD degradation curves, radiation area charts, circadian line plots)
-- **Waveform Graphics**: HTML5 Canvas (Hardware-accelerated ECG cardiac trace & Augmented Reality Face Mesh)
+- **Waveform Graphics**: HTML5 Canvas (ECG cardiac trace & Augmented Reality Face Mesh)
 - **Audio & Sound**: Web Audio API (Synthesized Klaxon Siren, 110-BPM CPR Metronome, Nature Biophilia Soundscapes)
 - **Speech Technologies**: Web Speech Recognition API (Hands-Free Voice-to-Text) + Web Speech Synthesis API (J.A.R.V.I.S. Voice Output)
 - **Vision Technologies**: WebRTC / MediaDevices (Webcam rPPG & PERCLOS Eye Tracking)
-- **Icons**: Lucide React
-- **Architecture**: 100% Client-Side / PWA-Ready (Ensuring full functionality during deep-space Earth communication blackouts)
+- **Architecture**: 100% Client-Side / PWA-Ready (Zero cloud dependencies for deep-space comm blackouts)
 
 ---
 
