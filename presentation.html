@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MARK XI - NASA Space Apps Challenge 2026 Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #05070f;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .slide {
+      width: 100vw;
+      min-height: 100vh;
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 3rem 4.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.08) 0%, rgba(5, 7, 15, 1) 70%),
+                  radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.05) 0%, rgba(5, 7, 15, 1) 70%);
+      border-bottom: 2px dashed #1e293b;
+      page-break-after: always;
+      break-after: page;
+      overflow: hidden;
+    }
+    @media print {
+      body {
+        background: #05070f !important;
+      }
+      .slide {
+        border-bottom: none !important;
+        height: 100vh !important;
+        width: 100vw !important;
+        padding: 2.5rem 3.5rem !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+    .font-hud { font-family: 'Chakra Petch', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(14, 165, 233, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(51, 65, 85, 0.8);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(12px);
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    
+    .text-cyan { color: #06b6d4; }
+    .text-amber { color: #f59e0b; }
+    .text-red { color: #ef4444; }
+    .text-emerald { color: #10b981; }
+
+    .glow-cyan {
+      text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+    }
+    .btn-print {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 100;
+      background: #06b6d4;
+      color: #000;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      font-family: 'Chakra Petch', sans-serif;
+      box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
+    }
+    .btn-print:hover { background: #22d3ee; }
+  </style>
+</head>
+<body>
+
+  <button class="btn-print no-print" onclick="window.print()">🖨️ Print to PDF (Ctrl + P)</button>
+
+  <!-- SLIDE 1: TITLE SLIDE -->
+  <section class="slide">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="badge">NASA SPACE APPS CHALLENGE 2026 • GLOBAL SUBMISSION</div>
+      <div class="font-mono" style="font-size: 0.85rem; color: #94a3b8;">SLIDE 01 / 07</div>
+    </div>
+
+    <div style="margin: auto 0;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+        <span style="display: inline-block; width: 12px; height: 12px; background: #06b6d4; border-radius: 50%; box-shadow: 0 0 12px #06b6d4;"></span>
+        <span class="font-hud" style="color: #38bdf8; letter-spacing: 0.2em; font-size: 1.1rem; font-weight: 700;">AUTONOMOUS DEEP-SPACE CDSS</span>
+      </div>
+      <h1 class="font-hud glow-cyan" style="font-size: 4.2rem; font-weight: 700; line-height: 1.05; margin-bottom: 1.25rem;">
+        PROJECT MARK XI
+      </h1>
+      <p style="font-size: 1.6rem; color: #cbd5e1; max-width: 900px; line-height: 1.4; margin-bottom: 2rem;">
+        Autonomous Astronaut Health Monitoring & Clinical Decision Support System for Long-Duration Spaceflight
+      </p>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <div class="card" style="padding: 0.85rem 1.25rem; background: rgba(30, 41, 59, 0.6);">
+          <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Challenge Category</div>
+          <div class="font-hud" style="font-weight: 700; color: #f8fafc; font-size: 1rem;">Create Health Monitoring Software for Astronauts</div>
+        </div>
+        <div class="card" style="padding: 0.85rem 1.25rem; background: rgba(30, 41, 59, 0.6);">
+          <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Standards Compliance</div>
+          <div class="font-hud" style="font-weight: 700; color: #06b6d4; font-size: 1rem;">NASA-STD-3001 • NASA HRP • Flight Rule B13-102</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #1e293b; padding-top: 1.5rem;">
+      <div>
+        <div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-bottom: 0.25rem;">Open Source Repository</div>
+        <div class="font-mono text-cyan" style="font-size: 1rem; font-weight: 600;">🔗 https://github.com/thv77/PROJECT-XI</div>
+      </div>
+      <div style="text-align: right;">
+        <div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-bottom: 0.25rem;">Live Web App</div>
+        <div class="font-mono" style="font-size: 0.95rem; color: #38bdf8;">🌐 https://thv77.github.io/PROJECT-XI/</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: THE DEEP SPACE CHALLENGE -->
+  <section class="slide">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="badge" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border-color: rgba(239, 68, 68, 0.3);">
+        THE MISSION CHALLENGE
+      </div>
+      <div class="font-mono" style="font-size: 0.85rem; color: #94a3b8;">SLIDE 02 / 07</div>
+    </div>
+
+    <div>
+      <h2 class="font-hud" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 0.5rem;">
+        When Earth is 14–22 Minutes Away, Autonomy is Survival
+      </h2>
+      <p style="color: #94a3b8; font-size: 1.15rem;">
+        During transit to Mars and on lunar basecamps, real-time consultation with Johnson Space Center Ground Flight Surgeons is physically impossible.
+      </p>
+    </div>
+
+    <div class="grid-3" style="margin: 1.5rem 0;">
+      <div class="card" style="border-top: 4px solid #ef4444;">
+        <div class="font-hud text-red" style="font-size: 1.8rem; font-weight: 700;">22 min</div>
+        <h3 class="font-hud" style="font-size: 1.1rem; margin: 0.5rem 0;">DSN Signal Latency</h3>
+        <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.5;">
+          Round-trip communication takes up to 44 minutes. In acute hypoxia, arrhythmia, or arterial bleeds, ground advice arrives too late.
+        </p>
+      </div>
+      <div class="card" style="border-top: 4px solid #f59e0b;">
+        <div class="font-hud text-amber" style="font-size: 1.8rem; font-weight: 700;">5 Hazards</div>
+        <h3 class="font-hud" style="font-size: 1.1rem; margin: 0.5rem 0;">NASA R.I.D.G.E. Model</h3>
+        <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.5;">
+          <strong>R</strong>adiation (GCR/SPE), <strong>I</strong>solation, <strong>D</strong>istance from Earth, altered <strong>G</strong>ravity fields, and <strong>E</strong>xtreme closed environments.
+        </p>
+      </div>
+      <div class="card" style="border-top: 4px solid #06b6d4;">
+        <div class="font-hud text-cyan" style="font-size: 1.8rem; font-weight: 700;">Zero Physician</div>
+        <h3 class="font-hud" style="font-size: 1.1rem; margin: 0.5rem 0;">Non-Physician Crew</h3>
+        <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.5;">
+          Astronauts must independently perform ultrasound, eye exams, emergency resuscitation, and dose recalculation without medical degrees.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="background: rgba(15, 23, 42, 0.9); border-color: rgba(6, 182, 212, 0.3);">
+      <div class="font-hud" style="font-size: 1rem; color: #38bdf8; margin-bottom: 0.25rem;">THE MARK XI IMPERATIVE:</div>
+      <div style="font-size: 0.95rem; color: #e2e8f0; line-height: 1.5;">
+        A 100% offline edge-native cockpit providing continuous predictive monitoring, differential diagnosis, and clinical interventions directly at the crew workstation.
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; border-top: 1px solid #1e293b; padding-top: 1rem;">
+      <span class="font-mono" style="font-size: 0.85rem; color: #64748b;">PROJECT MARK XI</span>
+      <span class="font-mono text-cyan" style="font-size: 0.85rem;">Source Code: https://github.com/thv77/PROJECT-XI</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 3: SYSTEM ARCHITECTURE & DIGITAL TWIN -->
+  <section class="slide">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="badge">SYSTEM ARCHITECTURE</div>
+      <div class="font-mono" style="font-size: 0.85rem; color: #94a3b8;">SLIDE 03 / 07</div>
+    </div>
+
+    <div>
+      <h2 class="font-hud" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 0.5rem;">
+        100% Client-Side Edge Architecture & 3D Bio-Avatar
+      </h2>
+      <p style="color: #94a3b8; font-size: 1.15rem;">
+        Engineered for full operational autonomy during deep space blackouts with zero cloud dependencies.
+      </p>
+    </div>
+
+    <div class="grid-2" style="margin: 1.5rem 0;">
+      <div class="card">
+        <h3 class="font-hud text-cyan" style="font-size: 1.25rem; margin-bottom: 1rem;">🩻 3D Interactive Bio-Avatar</h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; color: #cbd5e1;">
+          <li>🔹 <strong>Three.js Dynamic Digital Twin:</strong> Real-time anatomical model with interactive zoom, orbit, and organ inspection.</li>
+          <li>🔹 <strong>Layer Filters:</strong> Toggle between Neuro-Ocular (SANS), Cardiovascular & Fluids, and Musculoskeletal bone density layers.</li>
+          <li>🔹 <strong>HUD Laser Scanline:</strong> Visualizes biometric sensor sweeps across all 6 physiological organ systems.</li>
+          <li>🔹 <strong>Dynamic Anomaly Highlights:</strong> Live color alerts based on injected clinical stressors.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="font-hud text-cyan" style="font-size: 1.25rem; margin-bottom: 1rem;">⚡ Edge-Native Sensor Mesh</h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; color: #cbd5e1;">
+          <li>🔹 <strong>Zero Cloud Calls:</strong> Runs completely locally inside the spacecraft habitat browser via Vite 6 + React 18 PWA.</li>
+          <li>🔹 <strong>Hardware Canvas Pipelines:</strong> 60 FPS real-time ECG waveforms and face mesh tracking.</li>
+          <li>🔹 <strong>Multi-Gravity Telemetry:</strong> Auto-recalibrates reference vital ranges for Transit (0g), Lunar (1/6g), and Mars (3/8g).</li>
+          <li>🔹 <strong>Squad Multi-Crew Radar:</strong> Side-by-side health comparison across CDR, PLT, and CMO squad members.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="display: flex; justify-content: space-around; align-items: center; text-align: center; background: rgba(30, 41, 59, 0.5);">
+      <div>
+        <div class="font-hud text-cyan" style="font-size: 1.4rem; font-weight: 700;">6 Systems</div>
+        <div style="font-size: 0.8rem; color: #94a3b8;">Organ Biometric Feeds</div>
+      </div>
+      <div style="height: 30px; width: 1px; background: #334155;"></div>
+      <div>
+        <div class="font-hud text-cyan" style="font-size: 1.4rem; font-weight: 700;">13 Modules</div>
+        <div style="font-size: 0.8rem; color: #94a3b8;">Integrated Clinical Stations</div>
+      </div>
+      <div style="height: 30px; width: 1px; background: #334155;"></div>
+      <div>
+        <div class="font-hud text-cyan" style="font-size: 1.4rem; font-weight: 700;">0.00 ms</div>
+        <div style="font-size: 0.8rem; color: #94a3b8;">Cloud Latency (100% Offline)</div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; border-top: 1px solid #1e293b; padding-top: 1rem;">
+      <span class="font-mono" style="font-size: 0.85rem; color: #64748b;">PROJECT MARK XI</span>
+      <span class="font-mono text-cyan" style="font-size: 0.85rem;">Source Code: https://github.com/thv77/PROJECT-XI</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: TOUCHLESS DIAGNOSTICS & SELF-EXAMS -->
+  <section class="slide">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="badge">DIAGNOSTIC INNOVATION</div>
+      <div class="font-mono" style="font-size: 0.85rem; color: #94a3b8;">SLIDE 04 / 07</div>
+    </div>
+
+    <div>
+      <h2 class="font-hud" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 0.5rem;">
+        Touchless Optical Biometrics & Guided Self-Exams
+      </h2>
+      <p style="color: #94a3b8; font-size: 1.15rem;">
+        Eliminating wearable sensor mass while catching early physiological degradation in deep space.
+      </p>
+    </div>
+
+    <div class="grid-2" style="margin: 1.5rem 0;">
+      <div class="card">
+        <div class="font-hud text-cyan" style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">
+          📷 Webcam rPPG & PERCLOS Monitor
+        </div>
+        <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 1rem;">
+          Uses <strong>remote Photoplethysmography (rPPG)</strong> via the webcam to detect microscopic hemoglobin absorption changes in facial skin capillaries, extracting pulse rate touchlessly.
+        </p>
+        <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">
+          <strong>PERCLOS Drowsiness Detection:</strong> Tracks eyelid closure percentages and blink frequencies to alert astronauts to impending micro-sleep and fatigue before critical maneuvers.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="font-hud text-cyan" style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">
+          👁️ Autonomous SANS & Cognitive Suite
+        </div>
+        <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 1rem;">
+          <strong>Digital Snellen & Amsler Grid:</strong> Astronauts self-evaluate hyperopic shift and choroidal folds to detect Spaceflight-Associated Neuro-Ocular Syndrome (SANS) early.
+        </p>
+        <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">
+          <strong>Simulated Ocular Ultrasound & 3-Min PVT:</strong> Guided tele-ultrasound probe placement on the eyelid to gauge optic nerve sheath diameter (ONSD), paired with millisecond-precision reaction testing.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.08);">
+      <div class="font-hud text-emerald" style="font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem;">MICROFLUIDIC COMPATIBILITY:</div>
+      <div style="font-size: 0.9rem; color: #cbd5e1;">
+        Integrated with ASTRO-LAB™ microfluidics simulator for Zero-G acoustic separation and dry-reagent test cartridges (Metabolic, Renal Calcium, Biodosimetry, Salivary Stress Swab).
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; border-top: 1px solid #1e293b; padding-top: 1rem;">
+      <span class="font-mono" style="font-size: 0.85rem; color: #64748b;">PROJECT MARK XI</span>
+      <span class="font-mono text-cyan" style="font-size: 0.85rem;">Source Code: https://github.com/thv77/PROJECT-XI</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: AUTONOMOUS AI COPILOTS -->
+  <section class="slide">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="badge">AUTONOMOUS ARTIFICIAL INTELLIGENCE</div>
+      <div class="font-mono" style="font-size: 0.85rem; color: #94a3b8;">SLIDE 05 / 07</div>
+    </div>
+
+    <div>
+      <h2 class="font-hud" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 0.5rem;">
+        Dual AI Copilots: J.A.R.V.I.S. & S.T.E.A.L.T.H.
+      </h2>
+      <p style="color: #94a3b8; font-size: 1.15rem;">
+        Hands-free speech interaction designed specifically for astronauts wearing pressurized suits and bulky gloves.
+      </p>
+    </div>
+
+    <div class="grid-2" style="margin: 1.5rem 0;">
+      <div class="card" style="border-top: 4px solid #06b6d4;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <h3 class="font-hud text-cyan" style="font-size: 1.35rem;">🤖 J.A.R.V.I.S.</h3>
+          <span class="badge" style="font-size: 0.7rem;">CLINICAL SURGEON AI</span>
+        </div>
+        <div class="font-mono" style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.75rem;">
+          Joint Autonomous Response & Vitals Intelligence Surgeon
+        </div>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.95rem; color: #cbd5e1;">
+          <li>🔹 <strong>Differential Diagnostic Engine:</strong> Analyzes complex space symptoms and calculates condition confidence percentages.</li>
+          <li>🔹 <strong>Audio Diagnostic Readback:</strong> Web Speech Synthesis speaks aloud clinical diagnoses and step-by-step treatments.</li>
+          <li>🔹 <strong>NASA HRP Protocol Prescriptions:</strong> Prescribes Chibis LBNP suit parameters, ARED loading, and hypercapnia countermeasures.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-top: 4px solid #38bdf8;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <h3 class="font-hud" style="font-size: 1.35rem; color: #38bdf8;">🗣️ S.T.E.A.L.T.H.</h3>
+          <span class="badge" style="font-size: 0.7rem;">HANDS-FREE HAB OPERATOR</span>
+        </div>
+        <div class="font-mono" style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.75rem;">
+          Spacecraft Telemetry, Examination & Audio Link Tracking HUD
+        </div>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.95rem; color: #cbd5e1;">
+          <li>🔹 <strong>Full Hands-Free Hab Control:</strong> Speak commands to navigate modules, switch crew biometrics, or trigger emergency protocols.</li>
+          <li>🔹 <strong>Audible Vitals Readouts:</strong> Queries live biometrics on demand: <em>"Commander, heart rate 64, BP 118/76, readiness 94%."</em></li>
+          <li>🔹 <strong>Visual Audio Waveform HUD:</strong> Floating glassmorphism orb provides live reactive visual feedback while listening or speaking.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="background: rgba(30, 41, 59, 0.5); display: flex; align-items: center; gap: 1rem;">
+      <span class="font-hud" style="color: #06b6d4; font-size: 1.5rem;">🎙️</span>
+      <div style="font-size: 0.9rem; color: #cbd5e1;">
+        <strong>Hands-Free Spacewalk & Habitat Operation:</strong> Both AIs leverage the native Web Speech API and client-side phonetic matching, functioning completely without internet connectivity or external APIs.
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; border-top: 1px solid #1e293b; padding-top: 1rem;">
+      <span class="font-mono" style="font-size: 0.85rem; color: #64748b;">PROJECT MARK XI</span>
+      <span class="font-mono text-cyan" style="font-size: 0.85rem;">Source Code: https://github.com/thv77/PROJECT-XI</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 6: EMERGENCY RESUSCITATION & PHARMACY -->
+  <section class="slide">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="badge" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border-color: rgba(239, 68, 68, 0.3);">
+        CRITICAL COUNTERMEASURES
+      </div>
+      <div class="font-mono" style="font-size: 0.85rem; color: #94a3b8;">SLIDE 06 / 07</div>
+    </div>
+
+    <div>
+      <h2 class="font-hud" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 0.5rem;">
+        CODE RED Zero-G CPR & Space Pharmacy Radiolysis
+      </h2>
+      <p style="color: #94a3b8; font-size: 1.15rem;">
+        Tackling high-stakes spaceflight emergencies and pharmaceutical degradation under cosmic rays.
+      </p>
+    </div>
+
+    <div class="grid-2" style="margin: 1.5rem 0;">
+      <div class="card" style="border-top: 4px solid #ef4444;">
+        <h3 class="font-hud text-red" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+          🚨 CODE RED Zero-G CPR Metronome
+        </h3>
+        <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 1rem;">
+          <strong>Calibrated to NASA Flight Rule B13-102:</strong> Operates an interactive 110-BPM rhythmic audio clicker and visual guide (<code>PUSH 5cm - RELEASE</code>) for the Crew Medical Restraint System (CMRS).
+        </p>
+        <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">
+          <strong>High-Stakes Scenarios:</strong> Step-by-step triage for Ventricular Fibrillation, Rapid Cabin Decompression, Toxic Ammonia Leaks, and Solar Particle Storms.
+        </p>
+      </div>
+
+      <div class="card" style="border-top: 4px solid #f59e0b;">
+        <h3 class="font-hud text-amber" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+          💊 Space Pharmacy & Radiation Radiolysis
+        </h3>
+        <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 1rem;">
+          <strong>Cosmic Ray Radiolysis Tracking:</strong> Monitors active pharmaceutical ingredient (API) degradation caused by cumulative galactic cosmic rays (GCR).
+        </p>
+        <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">
+          <strong>Dose Compensation & 3D Synthesis:</strong> Auto-recalculates dosage offsets (+15% Amoxicillin, +20% Zolpidem) and simulates on-demand molecular 3D printing of replacement drugs.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="background: rgba(30, 41, 59, 0.5); display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <div class="font-hud" style="color: #f8fafc; font-size: 1.05rem;">📄 NASA Form 1047-B Medical Dossier</div>
+        <div style="font-size: 0.85rem; color: #94a3b8;">Instant one-click PDF certification export & PRACA Form 1048-A anomaly logging.</div>
+      </div>
+      <div class="badge" style="background: rgba(6, 182, 212, 0.2); color: #06b6d4;">DSN ENCRYPTED UPLINK READY</div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; border-top: 1px solid #1e293b; padding-top: 1rem;">
+      <span class="font-mono" style="font-size: 0.85rem; color: #64748b;">PROJECT MARK XI</span>
+      <span class="font-mono text-cyan" style="font-size: 0.85rem;">Source Code: https://github.com/thv77/PROJECT-XI</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 7: IMPACT & ROADMAP -->
+  <section class="slide">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="badge">MISSION IMPACT & CONCLUSION</div>
+      <div class="font-mono" style="font-size: 0.85rem; color: #94a3b8;">SLIDE 07 / 07</div>
+    </div>
+
+    <div>
+      <h2 class="font-hud" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 0.5rem;">
+        Empowering Humanity's Next Leap to Deep Space
+      </h2>
+      <p style="color: #94a3b8; font-size: 1.15rem;">
+        From the Artemis Lunar Basecamp to Crewed Mars Transit—and Extreme Terrestrial Environments.
+      </p>
+    </div>
+
+    <div class="grid-3" style="margin: 1.5rem 0;">
+      <div class="card">
+        <div class="font-hud text-cyan" style="font-size: 1.3rem; margin-bottom: 0.5rem;">🌕 Artemis & Gateway</div>
+        <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
+          Enables autonomous lunar surface EVAs, cephalad fluid shift monitoring in 1/6g, and radiation shelter triage during solar storms.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="font-hud text-cyan" style="font-size: 1.3rem; margin-bottom: 0.5rem;">🔴 Mars Exploration</div>
+        <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
+          Operates across 3-year deep space missions without relying on ground flight surgeons, maintaining crew readiness and psychological resilience.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="font-hud text-emerald" style="font-size: 1.3rem; margin-bottom: 0.5rem;">🌍 Earth Telemedicine</div>
+        <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
+          Directly benefits rural clinics, Antarctic stations, submarines, and disaster zones lacking doctors via touchless vitals and offline triage.
+        </p>
+      </div>
+    </div>
+
+    <!-- Official Links Box -->
+    <div class="card" style="border: 2px solid #06b6d4; background: rgba(6, 182, 212, 0.08); padding: 1.5rem; text-align: center;">
+      <div class="font-hud" style="font-size: 1.3rem; color: #f8fafc; margin-bottom: 0.5rem;">
+        EXPLORE THE LIVE MISSION SYSTEM & SOURCE CODE
+      </div>
+      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 0.75rem;">
+        <div class="font-mono" style="font-size: 1rem; color: #38bdf8;">
+          💻 <strong>Source Code:</strong> <a href="https://github.com/thv77/PROJECT-XI" style="color: #38bdf8; text-decoration: underline;" target="_blank">https://github.com/thv77/PROJECT-XI</a>
+        </div>
+        <div class="font-mono" style="font-size: 1rem; color: #38bdf8;">
+          🌐 <strong>Live App:</strong> <a href="https://thv77.github.io/PROJECT-XI/" style="color: #38bdf8; text-decoration: underline;" target="_blank">https://thv77.github.io/PROJECT-XI/</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; border-top: 1px solid #1e293b; padding-top: 1rem;">
+      <span class="font-mono" style="font-size: 0.85rem; color: #64748b;">NASA SPACE APPS CHALLENGE 2026 • MARK XI</span>
+      <span class="font-mono text-cyan" style="font-size: 0.85rem;">https://github.com/thv77/PROJECT-XI</span>
+    </div>
+  </section>
+
+</body>
+</html>
